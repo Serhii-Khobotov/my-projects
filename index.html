@@ -9,32 +9,39 @@
   <script src="app.js"></script>
 </head>
 <body>
-  <form action="https://mate-academy-form-lesson.herokuapp.com/create-application" method="post">
+  
+  <form action="https://mate-academy-form-lesson.herokuapp.com/create-application" method="post" onsubmit="onSubmit()">
 
     <fieldset class="block">
       <legend class="chapter">
         Personal information
       </legend>
       <div class="field_title">
-        <label for="">
+        <label for="surname">
           Surname
           <input
             type="text"
+            autocomplete="off"
             class="field"
-            name="Surname">
+            name="Surname"
+            id="surname"
+            required>
         <label>
       </div>
       <div class="field_title">
-        <label for="">
+        <label for="name">
           Name
           <input
             type="text"
+            autocomplete="off"
             class="field"
-            name="Name">
+            name="Name"
+            id="name"
+            required>
         </label>
       </div>
       <div class="field_title">
-        <label for="">
+        <label for="age">
           How old are you?
           <input
             name="age"
@@ -42,25 +49,29 @@
             class="field"
             value="12"
             min="10"
-            max="99">
+            max="100"
+            id="age">
         </label>
       </div>
       <div class="field_title">
-        <label for="">
+        <label for="dob">
           Full date of birth:
           <input
             name="date of birth"
             type="date"
-            class="field">
+            class="field"
+            id="dob">
         </label>
       </div>
       <div class="field_title">
-        <label for="">
+        <label for="terms">
           I accept the term of the agreement
           <input
             name="terms"
             type="checkbox"
-            class="field">
+            class="field"
+            id="terms"
+            required>
         </label>
       </div>
     </fieldset>
@@ -70,19 +81,28 @@
         Registration
       </legend>
       <div class="field_title">
-        <label for="">
+        <label for="mail">
           E-mail
           <input
+            placeholder="email@example.com"
             name="email"
             type="email"
-            class="field">
+            class="field"
+            id="mail"
+            required>
         </label>
       </div>
       <div class="field_title">
-        <label for="">
+        <label for="key">
           Password
-          <input type="password"
-          class="field">
+          <input
+            name="password"
+            type="password"
+            class="field"
+            id="key"
+            required
+            minlength="6"
+            maxlength="12">
         </label>
       </div>
     </fieldset>
@@ -93,23 +113,31 @@
       </legend>
       <div class="field_title">
         Do you love cats?
-        <label for="">
-          <input type="radio"
-          name="cats?"
-          value="y"
-          class="field">
-          yes
+        <label for="cats=y">
+          <input
+            type="radio"
+            name="cats?"
+            value="y"
+            class="field"
+            id="cats=y">
+            yes
         </label>
-        <label for="">
-          <input type="radio" name="cats?" value="n" class="field">
-          no
+        <label for="cats=n">
+          <input
+            type="radio"
+            name="cats?"
+            value="n"
+            class="field"
+            id="cats=n">
+            no
         </label>
       </div>
       <div class="field_title">
         <label for="favorite_color">
           What is you favorite color?
         </label>
-        <input type="color"
+        <input
+          type="color"
           name="favorite_color"
           id="favorite_color"
           class="field">
@@ -118,22 +146,33 @@
         <label for="time for go to sleep">
           What time do you go to bed?
         </label>
-        <input type="time" id="time for go to sleep" class="field">
+        <input
+          name="time for go to sleep"
+          type="time"
+          id="time for go to sleep"
+          class="field">
       </div>
       <div class="field_title">
         <label for="favorite car">
           What are your favorite brand of cars?
-          <select class="field">
-           <option value="bmw">BMW</option>
-           <option value="audi">Audi</option>
-           <option value="lada">Lada</option>
+          <select
+            class="field"
+            id="favorite car"
+            name="favorite car"
+            >
+              <option value="bmw">BMW</option>
+              <option value="audi">Audi</option>
+              <option value="lada">Lada</option>
           </select>
         </label>
       </div>
       <div class="field_title">
-        <label for="" class="field">
+        <label for="rate" class="field">
           How do you rate our work?
-          <input type="range" >
+          <input
+            name="rate"
+            type="range"
+            id="rate">
         </label>
       </div>
     </fieldset>
@@ -143,20 +182,27 @@
         Additional info:
       </legend>
       <div class="field_title">
-        Comments:
-        <textarea 
+        <label for="info">
+          Comments
+        </label>
+        <textarea
+          autocomplete="off"
           name="Info about user" 
-          id="" cols="18" 
-          rows="2" class="title">
+          id="info"
+          cols="18" 
+          rows="2"
+          class="title">
         </textarea>
       </div>
       <div class="field_title">
         <label for="2">
           Would you recomendeted us?
         </label>
-        <select name="" id="2">
-          <option value="y">Yes</option>
-          <option value="n">No</option> 
+        <select
+          name="recomendeted?"
+          id="2">
+            <option value="y">Yes</option>
+            <option value="n">No</option>
         </select>
       </div>
     </fieldset>
